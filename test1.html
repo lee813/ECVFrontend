@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>居中</title>
+</head>
+<style media="screen">
+
+  body {
+    height: 100vh;
+  }
+
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .center-container {
+    position: relative;
+    width: 100%;
+    height: 100%
+  }
+
+  .position {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+</style>
+
+<body>
+  <!-- <div class="flexbox">
+    <img src="https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+  </div> -->
+  <div class="center-container">
+    <img class="position" src="https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+  </div>
+
+</body>
+
+</html>
