@@ -9,12 +9,19 @@
     <div id="example"></div>
     <script type="text/babel">
       var names = ['Alice', 'Emily', 'Kate'];
+      const name = names.map(function (index, blabla) {
+        console.log(blabla)
+        console.log(index)
+        return <div key={blabla}> Hello, {blabla}!</div>
+      })
+
+      console.log(name)
 
       ReactDOM.render(
         <div>
         {
-          names.map(function (name, index) {
-            return <div key={index}> Hello, {name}!</div>
+          names.map(function (blabla, index) {
+            return <div key={index}> Hello, {blabla}!</div>
           })
         }
         </div>,
