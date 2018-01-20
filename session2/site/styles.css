@@ -1,0 +1,67 @@
+body {
+  height: 100vh;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #EAEAEA;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height:5%;
+  background: lightgreen;
+}
+
+.header .logo {
+  padding: 10px;
+  width: 50px;
+}
+.header .right {
+  padding: 10px;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  background: grey;
+  height: 100%;
+  width: 100%;
+}
+.main-row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.main-row .left {
+  width: 30%;
+  height: 100%;
+  background-color: azure;
+}
+.main-row .right {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+}
+.main-row .right .item {
+  height: 30%;
+  width: 100%;
+  margin-top: 2%;
+  background-color: lightcoral;
+}
+
+
+.footer {
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+  background: lightgreen;
+}
+
+.footer button {
+  margin: 5px;
+}
