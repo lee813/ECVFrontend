@@ -1,5 +1,3 @@
-import 'jquery'
-
 window.onload = function () {
     // console.log('load')
 
@@ -104,17 +102,6 @@ window.onload = function () {
         },
     ]
 
-   const a =  cities.map((blabla, index) => {
-        const longi = blabla.lat - 10
-
-        return (<div>
-            <span>
-                {blabla.name}
-            </span> - 
-            <span>{longi} </span>
-        </div>)
-    })
-
     let breakfast = {}
 
     // 将{drink: '啤酒'} 对象拷贝到breakfast对象中
@@ -140,9 +127,6 @@ window.onload = function () {
             alert('finished')
         },
     }
-
-    <AComponent onClick={test.onClick} onFinish={test.onFinish} />
-    <AComponent {...test2} />
 
 }
 
