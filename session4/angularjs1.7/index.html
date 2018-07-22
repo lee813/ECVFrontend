@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        名:
+        <input type="text" ng-model="firstName">
+        <br> 姓:
+        <input type="text" ng-model="lastName">
+        <br>
+        <br> 姓名: {{firstName + " " + lastName}}
+        <button ng-click="onAdd()">add</button>
+
+        <div>
+            Name list:
+            <ul>
+                <li ng-repeat="name in names">
+                    {{name| uppercase}}
+                </li>
+
+            </ul>
+        </div>
+
+        <div>
+            Random people list:
+            <ul>
+                <li ng-repeat="name in randomPeople">
+                    {{name.name.first| uppercase}}
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.service('webService', function ($http) {
+            this.loadNames = function () {
+                return $http.get("https://randomuser.me/api?results=10");
+            }
+        });
+
+        app.controller('myCtrl', function ($scope, webService) {
+            webService.loadNames().then(function (res) {
+                $scope.randomPeople = res.data.results
+            })
+
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+
+            $scope.names = [
+                'Alan',
+                'Beth',
+                'Zoe'
+            ]
+
+            $scope.onAdd = function () {
+                $scope.names.push($scope.firstName)
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
