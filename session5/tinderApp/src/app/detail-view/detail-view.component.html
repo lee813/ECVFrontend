@@ -1,0 +1,17 @@
+<div *ngIf="user" style="padding:10px">
+  <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{user.firstname}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{user.avatar}} alt="pic">
+      <mat-card-content>
+        <p>
+          {{user.age}} years' old, from {{user.location}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onClickFav(user)">Like</button>
+        <button mat-button (click)="onClickNext()" >Next</button>
+      </mat-card-actions>
+    </mat-card>
+</div>

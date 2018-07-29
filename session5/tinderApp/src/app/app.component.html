@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <mat-toolbar>
+      <div style="display: flex; justify-content: space-between; width: 100%">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+              Menu
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/favorite" (click)="loadFavorite()">
+                <span>Favorite</span>
+              </button>
+              <button mat-menu-item routerLink="/detail" (click)="loadFind()">
+                <span>Find</span>
+              </button>
+            </mat-menu>
+            <h2>{{title}}</h2>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <div *ngIf="!hideDetail">
+      <app-detail-view [user]="user" (goNext)="next()"></app-detail-view>
+    </div>
+    
+</div>
